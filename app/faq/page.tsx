@@ -7,6 +7,8 @@ import { useCTAForm } from '@/contexts/cta-form-context'
 import Link from 'next/link'
 import { Header } from '@/components/header'
 import SearchParamsWrapper from '@/components/search-params-wrapper';
+import { InteractiveFAQItem } from '@/components/interactive-faq-item';
+import { InteractiveCTAButton } from '@/components/interactive-cta-button';
 
 interface FAQItem {
   question: string
@@ -48,31 +50,6 @@ const faqs: FAQItem[] = [
   }
 ]
 
-function FAQItem({ question, answer }: FAQItem) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <div className="border-b border-gray-200">
-      <button
-        className="flex justify-between items-center w-full py-4 text-left"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="text-lg font-medium text-gray-900">{question}</span>
-        {isOpen ? (
-          <ChevronUp className="h-5 w-5 text-purple-600" />
-        ) : (
-          <ChevronDown className="h-5 w-5 text-purple-600" />
-        )}
-      </button>
-      {isOpen && (
-        <div className="pb-4">
-          <p className="text-gray-600">{answer}</p>
-        </div>
-      )}
-    </div>
-  )
-}
-
 export default function FAQ() {
   const { openHubspotForm, openHubspotMeeting } = useCTAForm()
 
@@ -105,7 +82,7 @@ export default function FAQ() {
             <div className="bg-white rounded-lg shadow-sm">
               <div className="divide-y divide-gray-200">
                 {faqs.map((faq, index) => (
-                  <FAQItem key={index} {...faq} />
+                  <InteractiveFAQItem key={index} {...faq} />
                 ))}
               </div>
             </div>
@@ -116,18 +93,18 @@ export default function FAQ() {
                 Ready to get started with Secberus?
               </h2>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button
+                <InteractiveCTAButton
                   onClick={() => openHubspotForm()}
                   className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-2"
                 >
                   Start Free Trial
-                </Button>
-                <Button
+                </InteractiveCTAButton>
+                <InteractiveCTAButton
                   onClick={() => openHubspotMeeting()}
                   className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-2"
                 >
                   Schedule a Demo
-                </Button>
+                </InteractiveCTAButton>
               </div>
             </div>
           </div>
