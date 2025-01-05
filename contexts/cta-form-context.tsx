@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState } from 'react'
 import { Modal } from "@/components/ui/modal"
 import { TrialForm } from '@/components/trial-form'
+import { SuccessNotification } from '@/components/ui/success-notification'
 
 type CTAFormContextType = {
   openHubspotForm: () => void;
@@ -19,6 +20,7 @@ export function CTAFormProvider({ children }: { children: React.ReactNode }) {
   const [isFormModalOpen, setIsFormModalOpen] = useState(false)
   const [isMeetingModalOpen, setIsMeetingModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const handleFormSubmit = async (data: any) => {
     setIsSubmitting(true)
@@ -35,8 +37,9 @@ export function CTAFormProvider({ children }: { children: React.ReactNode }) {
         throw new Error('Failed to submit form')
       }
 
-      // Close the modal on successful submission
+      // Close the modal and show success notification
       setIsFormModalOpen(false)
+      setShowSuccess(true)
     } catch (error) {
       console.error('Form submission error:', error)
       throw error
@@ -71,6 +74,11 @@ export function CTAFormProvider({ children }: { children: React.ReactNode }) {
       closeMeetingModal
     }}>
       {children}
+      <SuccessNotification 
+        show={showSuccess}
+        onClose={() => setShowSuccess(false)}
+        message="Thank you! We'll be in touch shortly to discuss how we can help you save time on compliance."
+      />
       <Modal isOpen={isFormModalOpen} onClose={closeFormModal}>
         <div className="p-6">
           <h2 className="text-2xl font-bold mb-4">Get Started with DTG</h2>

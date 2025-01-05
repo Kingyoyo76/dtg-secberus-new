@@ -22,9 +22,6 @@ const nextConfig = {
     config.resolve.fallback = { fs: false }
     return config
   },
-  server: {
-    host: '0.0.0.0',
-  },
 }
 
 module.exports = nextConfig

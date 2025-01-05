@@ -8,9 +8,9 @@ export function HowItWorksSection() {
   const { openHubspotMeeting } = useCTAForm()
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="how-it-works" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-12">
           How It Works—Simple, Flexible, Powerful
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -43,4 +43,3 @@ export function HowItWorksSection() {
     </section>
   )
 }
-
