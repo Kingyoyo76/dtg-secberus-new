@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { useCTAForm } from '@/contexts/cta-form-context'
 import Link from 'next/link'
 import { Header } from '@/components/header'
+import SearchParamsWrapper from '@/components/search-params-wrapper';
 
 interface FAQItem {
   question: string
@@ -78,58 +79,60 @@ export default function FAQ() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gray-50 py-12">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Home Button */}
-          <div className="mb-8 flex justify-center">
-            <Link href="/" className="inline-block">
-              <Button 
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-2 font-medium"
-              >
-                Back to Home
-              </Button>
-            </Link>
-          </div>
-
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              Learn more about the Secberus platform and how DTG helps with implementation
-            </p>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-sm">
-            <div className="divide-y divide-gray-200">
-              {faqs.map((faq, index) => (
-                <FAQItem key={index} {...faq} />
-              ))}
+      <SearchParamsWrapper>
+        <div className="min-h-screen bg-gray-50 py-12">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Home Button */}
+            <div className="mb-8 flex justify-center">
+              <Link href="/" className="inline-block">
+                <Button 
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-2 font-medium"
+                >
+                  Back to Home
+                </Button>
+              </Link>
             </div>
-          </div>
 
-          {/* Bottom CTA */}
-          <div className="mt-12 text-center">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              Ready to get started with Secberus?
-            </h2>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                onClick={() => openHubspotForm()}
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-2"
-              >
-                Start Free Trial
-              </Button>
-              <Button
-                onClick={() => openHubspotMeeting()}
-                className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-2"
-              >
-                Schedule a Demo
-              </Button>
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                Frequently Asked Questions
+              </h1>
+              <p className="text-lg text-gray-600 mb-8">
+                Learn more about the Secberus platform and how DTG helps with implementation
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm">
+              <div className="divide-y divide-gray-200">
+                {faqs.map((faq, index) => (
+                  <FAQItem key={index} {...faq} />
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-12 text-center">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                Ready to get started with Secberus?
+              </h2>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button
+                  onClick={() => openHubspotForm()}
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-2"
+                >
+                  Start Free Trial
+                </Button>
+                <Button
+                  onClick={() => openHubspotMeeting()}
+                  className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-2"
+                >
+                  Schedule a Demo
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </SearchParamsWrapper>
     </>
   )
 }

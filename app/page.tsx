@@ -13,25 +13,28 @@ import { BackToTop } from '@/components/back-to-top'
 import { Footer } from '@/components/footer'
 import { FAQSection } from '@/components/faq-section'
 import { InfoFooter } from '@/components/info-footer'
+import { SearchParamsWrapper } from '@/components/search-params-wrapper'
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <HeroSection />
-        <ResultsSection />
-        <HowItWorksSection />
-        <WhatYouGetSection />
-        <WhyWeStandOut />
-        <PainPointsSection />
-        <CTASection />
-      </main>
-      <FAQSection />
-      <TakeControlSection />
-      <Footer />
-      <InfoFooter />
-      <BackToTop />
-    </>
+    <SearchParamsWrapper>
+      <>
+        <Header />
+        <main>
+          <HeroSection />
+          <PainPointsSection />
+          <WhatYouGetSection />
+          <WhyWeStandOut />
+          <HowItWorksSection />
+          <ResultsSection />
+          <CTASection />
+          <TakeControlSection />
+          <BackToTop />
+          <Footer />
+          <FAQSection />
+          <InfoFooter />
+        </main>
+      </>
+    </SearchParamsWrapper>
   )
 }
