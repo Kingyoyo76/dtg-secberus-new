@@ -1,4 +1,8 @@
 {
+  "/api/hubspot/route": "app/api/hubspot/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/faq/page": "app/faq/page.js"
+  "/api/submit-form/route": "app/api/submit-form/route.js",
+  "/faq/page": "app/faq/page.js",
+  "/test/page": "app/test/page.js"
 }
