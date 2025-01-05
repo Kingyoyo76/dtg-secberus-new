@@ -18,7 +18,7 @@ import SearchParamsWrapper from '@/components/search-params-wrapper'
 export default function Home() {
   return (
     <SearchParamsWrapper>
-      <>
+      <div>
         <Header />
         <main>
           <HeroSection />
@@ -34,7 +34,7 @@ export default function Home() {
           <FAQSection />
           <InfoFooter />
         </main>
-      </>
+      </div>
     </SearchParamsWrapper>
   )
 }

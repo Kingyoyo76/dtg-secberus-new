@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from './ui/button'
+import SearchParamsWrapper from '@/components/search-params-wrapper';
 
 interface FAQItem {
   question: string
@@ -71,25 +72,27 @@ function FAQItem({ question, answer }: FAQItem) {
 
 export function FAQSection() {
   return (
-    <div className="bg-gray-50 py-12" id="faq">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-gray-600">
-            Learn more about the Secberus platform and how DTG helps with implementation
-          </p>
-        </div>
+    <SearchParamsWrapper>
+      <div className="bg-gray-50 py-12" id="faq">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Learn more about the Secberus platform and how DTG helps with implementation
+            </p>
+          </div>
 
-        <div className="bg-white rounded-lg shadow-sm">
-          <div className="divide-y divide-gray-200">
-            {faqs.map((faq, index) => (
-              <FAQItem key={index} {...faq} />
-            ))}
+          <div className="bg-white rounded-lg shadow-sm">
+            <div className="divide-y divide-gray-200">
+              {faqs.map((faq, index) => (
+                <FAQItem key={index} {...faq} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </SearchParamsWrapper>
   )
 }
