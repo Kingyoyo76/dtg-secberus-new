@@ -8,26 +8,26 @@ export function HowItWorksSection() {
   const { openHubspotMeeting } = useCTAForm()
 
   return (
-    <section id="how-it-works" className="py-16 bg-gray-50">
+    <section id="how-it-works" className="bg-purple-900 text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white text-center mb-12">
           How It Works—Simple, Flexible, Powerful
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center text-center">
-            <PenTool className="h-12 w-12 text-purple-600 mb-4" />
+            <PenTool className="h-12 w-12 text-white mb-4" />
             <h3 className="text-xl font-semibold mb-2">Write Custom Policies</h3>
-            <p className="text-gray-600">Easily create or import baselines tailored to your needs.</p>
+            <p className="text-gray-300">Easily create or import baselines tailored to your needs.</p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <Zap className="h-12 w-12 text-purple-600 mb-4" />
+            <Zap className="h-12 w-12 text-white mb-4" />
             <h3 className="text-xl font-semibold mb-2">Automate Verification</h3>
-            <p className="text-gray-600">Run checks to identify and fix gaps—no manual work required.</p>
+            <p className="text-gray-300">Run checks to identify and fix gaps—no manual work required.</p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <FileCheck className="h-12 w-12 text-purple-600 mb-4" />
+            <FileCheck className="h-12 w-12 text-white mb-4" />
             <h3 className="text-xl font-semibold mb-2">Stay Audit-Ready</h3>
-            <p className="text-gray-600">Generate reports, verify findings, and present compliance evidence seamlessly.</p>
+            <p className="text-gray-300">Generate reports, verify findings, and present compliance evidence seamlessly.</p>
           </div>
         </div>
         <div className="mt-12 text-center">

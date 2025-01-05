@@ -11,8 +11,8 @@ import { InteractiveFAQItem } from '@/components/interactive-faq-item';
 import { InteractiveCTAButton } from '@/components/interactive-cta-button';
 
 interface FAQItem {
-  question: string
-  answer: string
+  question: string;
+  answer: string;
 }
 
 const faqs: FAQItem[] = [
@@ -30,15 +30,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How does DTG help with Secberus implementation?",
-    answer: "DTG streamlines the procurement and implementation process of Secberus. Our team handles license acquisition, provides expert configuration support, ensures proper integration with your existing infrastructure, and offers ongoing technical support to optimize your security and compliance automation."
-  },
-  {
-    question: "What security frameworks and standards does Secberus support?",
-    answer: "Secberus supports a wide range of compliance frameworks including SOC 1/2, ISO 27001, HIPAA, GDPR, PCI DSS, NIST, and CIS benchmarks. The platform continuously updates its policies to reflect the latest compliance requirements and security best practices."
-  },
-  {
-    question: "How quickly can we get started with Secberus?",
-    answer: "Through DTG, you can get started with Secberus quickly and efficiently. We handle the licensing process and can typically complete basic platform setup within days. Full implementation, including custom policy configuration and integration with your existing tools, is usually completed within weeks."
+    answer: "DTG streamlines the procurement and implementation process of Secberus. Our team handles licensing and can typically complete basic platform setup within days. Full implementation, including custom policy configuration and integration with your existing tools, is usually completed within weeks."
   },
   {
     question: "What kind of ongoing support is provided?",
@@ -48,16 +40,16 @@ const faqs: FAQItem[] = [
     question: "How does Secberus handle policy enforcement?",
     answer: "Secberus provides real-time policy enforcement through its Policy-as-Code engine. It automatically detects and alerts on policy violations, provides remediation guidance, and can automatically enforce policies to prevent security drift. DTG helps customize these policies to match your organization's specific requirements."
   }
-]
+];
 
-export default function FAQ() {
+export default function FAQPage() {
   const { openHubspotForm, openHubspotMeeting } = useCTAForm()
 
   return (
     <SearchParamsWrapper>
       <div>
         <Header />
-        <div className="min-h-screen bg-gray-50 py-12">
+        <div className="bg-gray-50 py-12" id="faq">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Home Button */}
             <div className="mb-8 flex justify-center">
@@ -71,10 +63,10 @@ export default function FAQ() {
             </div>
 
             <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Frequently Asked Questions
-              </h1>
-              <p className="text-lg text-gray-600 mb-8">
+              </h2>
+              <p className="text-lg text-gray-600">
                 Learn more about the Secberus platform and how DTG helps with implementation
               </p>
             </div>

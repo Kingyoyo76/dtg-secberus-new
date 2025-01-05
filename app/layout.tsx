@@ -96,6 +96,9 @@ export default function RootLayout({
             }
           `}
         </Script>
+        <Script id="schema-markup" type="application/ld+json">
+          {`{"@context":"https://schema.org","@type":"WebPage","name":"Eliminate Compliance Gaps | Secberus Compliance Solution by DTG","description":"Automate compliance verification, reduce audit risks, and stay audit-ready with Secberus.","url":"https://dtg.com","publisher":{"@type":"Organization","name":"DTG","logo":{"@type":"ImageObject","url":"https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-T2AxAuqMD795FMaChpXHt3YtSxni0Q.png"}}}`}
+        </Script>
         <CTAFormProvider>
           {children}
         </CTAFormProvider>

@@ -12,7 +12,7 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="bg-purple-700 text-white">
+    <section id="hero" className="bg-purple-900 text-white">
       <div className="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-8">
           <span className="block mb-2">Eliminate Compliance Gaps.</span>
