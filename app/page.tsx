@@ -13,7 +13,7 @@ import { BackToTop } from '@/components/back-to-top'
 import { Footer } from '@/components/footer'
 import { FAQSection } from '@/components/faq-section'
 import { InfoFooter } from '@/components/info-footer'
-import { SearchParamsWrapper } from '@/components/search-params-wrapper'
+import SearchParamsWrapper from '@/components/search-params-wrapper'
 
 export default function Home() {
   return (
