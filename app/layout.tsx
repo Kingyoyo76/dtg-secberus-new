@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import { CTAFormProvider } from '@/contexts/cta-form-context'
 import { Metadata } from 'next'
 import Script from 'next/script'
-import { Analytics } from '@/components/analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -102,7 +101,6 @@ export default function RootLayout({
         <CTAFormProvider>
           {children}
         </CTAFormProvider>
-        <Analytics />
       </body>
     </html>
   )
