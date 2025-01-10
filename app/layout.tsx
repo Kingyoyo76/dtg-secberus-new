@@ -62,9 +62,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#7c3aed" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <Script id="schema-org" type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
