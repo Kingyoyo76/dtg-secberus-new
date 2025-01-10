@@ -7,19 +7,19 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dtg.com'),
+  metadataBase: new URL('https://dtgcompliance.vercel.app'),
   title: {
-    default: 'Eliminate Compliance Gaps | Secberus Compliance Solution by DTG',
-    template: '%s | DTG Secberus'
+    default: 'DTG Compliance | Cloud Security & Compliance Management',
+    template: '%s | DTG Compliance'
   },
-  description: 'Automate compliance verification, reduce audit risks, and stay audit-ready with Secberus. Powered by DTG for seamless integration.',
-  keywords: 'compliance automation, security compliance, cloud security, audit preparation, DTG, Secberus, compliance verification, security automation, cloud compliance',
+  description: 'Eliminate compliance gaps and minimize audit risks with DTG Compliance. Enterprise-grade cloud security and compliance management solutions. Trust. But Verify!',
+  keywords: 'cloud compliance, security compliance, audit risk management, enterprise security, cloud governance, DTG Compliance, Secberus',
   alternates: {
     canonical: '/'
   },
-  authors: [{ name: 'DTG' }],
-  creator: 'DTG',
-  publisher: 'DTG',
+  authors: [{ name: 'DTG Compliance' }],
+  creator: 'DTG Compliance',
+  publisher: 'DTG Compliance',
   robots: {
     index: true,
     follow: true,
@@ -33,24 +33,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://dtg.com',
-    siteName: 'DTG Secberus Compliance Solution',
-    title: 'Eliminate Compliance Gaps | Secberus Compliance Solution by DTG',
-    description: 'Automate compliance verification, reduce audit risks, and stay audit-ready with Secberus. Powered by DTG for seamless integration.',
+    url: 'https://dtgcompliance.vercel.app',
+    siteName: 'DTG Compliance',
+    title: 'DTG Compliance | Cloud Security & Compliance Management',
+    description: 'Eliminate compliance gaps and minimize audit risks with DTG Compliance. Enterprise-grade cloud security and compliance management solutions.',
     images: [{
-      url: '/og-image.jpg',
+      url: '/images/og-image.jpg',
       width: 1200,
       height: 630,
-      alt: 'DTG Secberus Compliance Solution',
+      alt: 'DTG Compliance - Cloud Security & Compliance Management',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@DTG',
-    creator: '@DTG',
-    title: 'Eliminate Compliance Gaps | Secberus Compliance Solution by DTG',
-    description: 'Automate compliance verification, reduce audit risks, and stay audit-ready with Secberus.',
-    images: ['/twitter-image.jpg'],
+    site: '@DTGCompliance',
+    creator: '@DTGCompliance',
+    title: 'DTG Compliance | Cloud Security & Compliance Management',
+    description: 'Enterprise-grade cloud security and compliance management solutions.',
+    images: ['/images/og-image.jpg'],
   },
 }
 
@@ -60,44 +60,31 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <meta name="theme-color" content="#7c3aed" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <Script id="schema-org" type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            'name': 'DTG Compliance',
+            'applicationCategory': 'SecurityApplication',
+            'description': 'Cloud security and compliance management solution',
+            'offers': {
+              '@type': 'Offer',
+              'availability': 'https://schema.org/InStock'
+            },
+            'provider': {
+              '@type': 'Organization',
+              'name': 'DTG Compliance',
+              'description': 'Enterprise cloud security and compliance management solutions provider'
+            }
+          })}
+        </Script>
       </head>
       <body className={inter.className}>
-        <Script id="schema-org" type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "DTG Secberus Compliance Solution",
-              "applicationCategory": "SecurityApplication",
-              "operatingSystem": "Cloud",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/OnlineOnly"
-              },
-              "description": "Automate compliance verification, reduce audit risks, and stay audit-ready with Secberus.",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "150"
-              },
-              "provider": {
-                "@type": "Organization",
-                "name": "DTG",
-                "sameAs": ["https://dtg.com"]
-              }
-            }
-          `}
-        </Script>
-        <Script id="schema-markup" type="application/ld+json">
-          {`{"@context":"https://schema.org","@type":"WebPage","name":"Eliminate Compliance Gaps | Secberus Compliance Solution by DTG","description":"Automate compliance verification, reduce audit risks, and stay audit-ready with Secberus.","url":"https://dtg.com","publisher":{"@type":"Organization","name":"DTG","logo":{"@type":"ImageObject","url":"https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-T2AxAuqMD795FMaChpXHt3YtSxni0Q.png"}}}`}
-        </Script>
         <CTAFormProvider>
           {children}
         </CTAFormProvider>

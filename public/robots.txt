@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://dtg.com/sitemap.xml
+Sitemap: https://dtgcompliance.vercel.app/sitemap.xml
 
 # Allow crawling of all content
 User-agent: Googlebot
