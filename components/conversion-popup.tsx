@@ -24,7 +24,7 @@ const messages = [
   }
 ]
 
-const INITIAL_DELAY = 20000 // 20 seconds before showing popup
+const INITIAL_DELAY = 15000 // 15 seconds before showing popup
 
 const ConversionPopup = () => {
   const [shouldShow, setShouldShow] = useState(false)
