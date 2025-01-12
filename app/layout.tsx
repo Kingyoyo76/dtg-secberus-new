@@ -3,6 +3,11 @@ import { Inter } from 'next/font/google'
 import { CTAFormProvider } from '@/contexts/cta-form-context'
 import { Metadata } from 'next'
 import Script from 'next/script'
+import dynamic from 'next/dynamic'
+
+const ConversionPopup = dynamic(() => import('@/components/conversion-popup'), {
+  ssr: false
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,44 +19,6 @@ export const metadata: Metadata = {
   },
   description: 'Eliminate compliance gaps and minimize audit risks with DTG Compliance. Enterprise-grade cloud security and compliance management solutions. Trust. But Verify!',
   keywords: 'cloud compliance, security compliance, audit risk management, enterprise security, cloud governance, DTG Compliance, Secberus',
-  alternates: {
-    canonical: '/'
-  },
-  authors: [{ name: 'DTG Compliance' }],
-  creator: 'DTG Compliance',
-  publisher: 'DTG Compliance',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://dtgcompliance.vercel.app',
-    siteName: 'DTG Compliance',
-    title: 'DTG Compliance | Cloud Security & Compliance Management',
-    description: 'Eliminate compliance gaps and minimize audit risks with DTG Compliance. Enterprise-grade cloud security and compliance management solutions.',
-    images: [{
-      url: '/images/og-image.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'DTG Compliance - Cloud Security & Compliance Management',
-    }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@DTGCompliance',
-    creator: '@DTGCompliance',
-    title: 'DTG Compliance | Cloud Security & Compliance Management',
-    description: 'Enterprise-grade cloud security and compliance management solutions.',
-    images: ['/images/og-image.jpg'],
-  },
 }
 
 export default function RootLayout({
@@ -60,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta name="theme-color" content="#7c3aed" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -72,14 +39,19 @@ export default function RootLayout({
             'name': 'DTG Compliance',
             'applicationCategory': 'SecurityApplication',
             'description': 'Cloud security and compliance management solution',
+            'operatingSystem': 'Cloud',
+            'applicationSubCategory': 'Enterprise Security',
             'offers': {
               '@type': 'Offer',
-              'availability': 'https://schema.org/InStock'
+              'availability': 'https://schema.org/InStock',
+              'price': '0',
+              'priceCurrency': 'USD'
             },
             'provider': {
               '@type': 'Organization',
               'name': 'DTG Compliance',
-              'description': 'Enterprise cloud security and compliance management solutions provider'
+              'description': 'Enterprise cloud security and compliance management solutions provider',
+              'url': 'https://dtgcompliance.vercel.app'
             }
           })}
         </Script>
@@ -87,6 +59,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <CTAFormProvider>
           {children}
+          <ConversionPopup />
         </CTAFormProvider>
       </body>
     </html>
