@@ -48,7 +48,7 @@ const ConversionPopup = () => {
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % messages.length)
-    }, 5000)
+    }, 3000)
 
     return () => clearInterval(timer)
   }, [shouldShow])
