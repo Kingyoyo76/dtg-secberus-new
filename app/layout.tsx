@@ -4,6 +4,7 @@ import { CTAFormProvider } from '@/contexts/cta-form-context'
 import { Metadata } from 'next'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
+import { Analytics } from "@vercel/analytics/react"
 
 const ConversionPopup = dynamic(() => import('@/components/conversion-popup'), {
   ssr: false
@@ -60,6 +61,7 @@ export default function RootLayout({
         <CTAFormProvider>
           {children}
           <ConversionPopup />
+          <Analytics />
         </CTAFormProvider>
       </body>
     </html>
